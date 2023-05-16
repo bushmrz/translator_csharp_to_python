@@ -15,6 +15,12 @@ class PythonPrinter:
         elif isinstance(node, Stmt):
             return node.accept(self)
 
+    def return_text(self, statements):
+        with open("py_code.py", 'w') as file:
+            for statement in statements:
+                result = self.get_node(statement)
+                file.write(result + '\n')
+
 
 # Expressions
 class ExprVisitor(PythonPrinter):

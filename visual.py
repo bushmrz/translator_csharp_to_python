@@ -144,7 +144,71 @@ def open_window_3():
     window_3 = tk.Toplevel(root)
     window_3.title("Window 3")
     window_3.geometry("1000x1000")
-    # Добавьте нужные элементы интерфейса для окна 3
+    text_labels = ["Исходный код на C#", "Код на Python"]
+    text_entries = []
+
+    def opz_function():
+        file_path = filedialog.askopenfilename()
+        if file_path:
+            with open(file_path, "r") as file:
+                lexical_analizator(file_path)
+                content = file.read()
+                text_entries[0].delete("1.0", tk.END)  # Удаление предыдущего текста
+                text_entries[0].insert(tk.END, content)
+                text_entries[1].delete("1.0", tk.END)
+
+        print(content)
+        (Language.get_python_code(content))
+        with open('py_code.py', 'r') as file:
+            py_code = file.read()
+            text_entries[1].insert(tk.END, py_code)
+
+    frame_buttons = tk.Frame(window_3)
+    frame_buttons.pack(side=tk.LEFT)
+
+    button_load_file = tk.Button(frame_buttons, text="Загрузить файл \n с исходным кодом на C#", command=opz_function, height=6, width=30, background="#7b68ee")
+    button_load_file.pack(side=tk.LEFT)
+
+    # Создание заголовков над текстовыми блоками
+    frame_labels = tk.Frame(window_3)
+    frame_labels.pack()
+    label = tk.Label(frame_labels, text=text_labels[0])
+    label.pack(side=tk.LEFT)
+
+    # Создание первой строки с двумя текстовыми блоками
+    frame_row1 = tk.Frame(window_3)
+    frame_row1.pack()
+    for _ in range(1):
+        text_box = scrolledtext.ScrolledText(frame_row1, width=70, height=30)
+        text_box.pack(side=tk.LEFT)
+        text_entries.append(text_box)
+
+    # Создание заголовков над текстовыми блоками
+    frame_labels = tk.Frame(window_3)
+    frame_labels.pack()
+    label = tk.Label(frame_labels, text=text_labels[1])
+    label.pack(side=tk.LEFT)
+
+    # Создание первой строки с двумя текстовыми блоками
+    frame_row1 = tk.Frame(window_3)
+    frame_row1.pack()
+    for _ in range(1):
+        text_box = scrolledtext.ScrolledText(frame_row1, width=70, height=30)
+        text_box.pack(side=tk.LEFT)
+        text_entries.append(text_box)
+
+    # frame_labels = tk.Frame(window_3)
+    # frame_labels.pack()
+    # label = tk.Label(frame_labels, text=text_labels[2])
+    # label.pack(side=tk.LEFT)
+    #
+    # # Создание первой строки с двумя текстовыми блоками
+    # frame_row1 = tk.Frame(window_3)
+    # frame_row1.pack()
+    # for _ in range(2):
+    #     text_box = scrolledtext.ScrolledText(frame_row1, width=60, height=40)
+    #     text_box.pack(side=tk.LEFT)
+    #     text_entries.append(text_box)
 
 
 # Создание главного окна

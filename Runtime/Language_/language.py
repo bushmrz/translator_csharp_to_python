@@ -103,6 +103,28 @@ class Language:
             Language.runtime_error(e)
 
     @staticmethod
+    def get_python_code(source):
+        scanner = Scanner(source)
+        tokens = scanner.scan_tokens()
+        parser = Parser(tokens, Language.error_handler)
+        statements = parser.parse()
+
+        if Language.hadError:
+            return
+
+        resolver = Resolver(Language.interpreter)
+        resolver.resolve(statements)
+
+        if Language.hadError:
+            return
+
+        try:
+            Language.interpreter.interpret(statements)
+            return PythonPrinter().return_text(statements)
+        except RuntimeError as e:
+            Language.runtime_error(e)
+
+    @staticmethod
     def error(line, message):
         Language.report(line, "", message)
 
