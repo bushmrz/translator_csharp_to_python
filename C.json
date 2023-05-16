@@ -1,0 +1,13 @@
+{
+    "C1": "\"20\"",
+    "C2": "\"c\"",
+    "C3": "\"Hello\"",
+    "C4": "\"Test calling function that prints Hello\"",
+    "C5": "\"Test: 10 + 10:\"",
+    "C6": "\"Printing arr = [1, 2, 3, 2, 3, 4]:\"",
+    "C7": "\"Printing arr[1]:\"",
+    "C8": "\"Changing arr[1] to 20:\"",
+    "C9": "\"if went to true\"",
+    "C10": "\"if went to false\"",
+    "C11": "\"Calling parent class method:\""
+}

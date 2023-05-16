@@ -1,0 +1,14 @@
+using System;
+namespace std;
+void main(){
+int a = 10;
+int s = 0;
+Console.WriteLine("a = ");
+Console.ReadLine(a);
+  s = a*a;
+Console.WriteLine("s = ", s);
+string s = "string1";
+double = 0.007;
+int w = -5;
+char f = 'a';
+}

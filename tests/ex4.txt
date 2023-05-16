@@ -1,0 +1,9 @@
+int a = 10;
+
+char abs = "c";
+string str = "Tezzt";
+
+int count = 0;
+int something() {
+    WriteLine("Hello");
+}

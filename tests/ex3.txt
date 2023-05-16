@@ -1,0 +1,36 @@
+using System;
+namespace std;
+	static void Main(string[] args)
+	{
+			int x;
+			int p;
+			int d;
+			Console.WriteLine("x = ");
+			x = Console.ReadLine();
+			p = 1;
+			while (x > 0)
+			{
+				d=x % 10;
+				if ((d == 2) || (d == 5))
+				{
+					p = p*d;
+				}
+				x=x/10;
+			}
+            		Console.WriteLine(p);
+			double ApplyDiscount(double p)
+        		{
+            			return p * 4;
+        		}
+
+        		double discountedPrice;
+			discountedPrice = ApplyDiscount(6);
+        }
+
+	static bool IsDivisibleBy4(int n)
+    	{
+        	return n % 4 == 0;
+    	}
+
+
+
