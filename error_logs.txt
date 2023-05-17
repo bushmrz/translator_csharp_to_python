@@ -1,0 +1,13 @@
+[line 15] Error at ';': Expect ')' after WriteLine. 
+[line 16] Error at '[': Expect expression. 
+[line 34] Error at '=': Expect variable name. 
+[line 35] Error at '{': Expect ';' after expression. 
+[line 37] Error at '*=': Expect expression. 
+[line 40] Error at 'System': Expect ';' after expression. 
+[line 43] Error at 'a': Expect parameter type. 
+[line 45] Error at 'return': Expect ';' after expression. 
+[line 47] Error at '}': Expect expression. 
+[line 50] Error at 'int': Expect expression. 
+[line 52] Error at 'WriteLine': Expect property name after '.'. 
+[line 53] Error at '.': Expect expression. 
+[line 53] Error at ';': Expect ')' after expression. 

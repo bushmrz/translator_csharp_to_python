@@ -3,10 +3,8 @@ class ParseError(BaseException):
 
 
 from Token.token_type import TokenType
-# from Runtime.Language_.language import Language
 from Ast.Nodes.statement import *
 from Runtime.Language_.assign_type import AssignType
-from Runtime.Language_.error_handler import ErrorHandler
 
 
 class Parser:
@@ -15,17 +13,18 @@ class Parser:
         self.tokens = tokens
         self.current = 0
         self.error_handler = error_handler
+        self.all_err = ""
 
     def parse(self):
         statements = []
-        iteration_count = 0  # Add this line to count the number of iterations
+        iteration_count = 0
 
         while not self.is_at_end():
-            if iteration_count >= 100:  # Add this line as a safeguard to prevent infinite loop
+            if iteration_count >= 100:
                 break
 
             declaration = self.declaration()
-            iteration_count += 1  # Add this line to increment the iteration count
+            iteration_count += 1
 
             if declaration is not None:
                 statements.append(declaration)
@@ -192,6 +191,7 @@ class Parser:
         value = self.expression()
         self.consume(TokenType.RIGHT_PAREN, "Expect ')' after WriteLine.")
         self.consume(TokenType.SEMICOLON, "Expect ';' at the end of WriteLine.")
+
         return Print(expression=value)
 
     def return_statement(self):

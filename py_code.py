@@ -33,18 +33,3 @@ count1 = 2
 
 print(count)
 print(count1)
-class Some:
-    def sum(a, b):
-        return a + b
-    
-
-class Something(Some):
-    def test():
-        print("Calling parent class method:")
-        sumResult = super.sum(10, 5)
-        print(sumResult)
-    
-
-Something().test()
-class EmptyClass:
-    pass

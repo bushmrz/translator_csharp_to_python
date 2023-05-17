@@ -10,11 +10,10 @@
     "I9": "testBool",
     "I10": "testBool2",
     "I11": "count1",
-    "I12": "Some",
-    "I13": "sum",
-    "I14": "Something",
-    "I15": "test",
-    "I16": "sumResult",
-    "I17": "base",
-    "I18": "EmptyClass"
+    "I12": "System",
+    "I13": "std",
+    "I14": "checker",
+    "I15": "True",
+    "I16": "False",
+    "I17": "Checker"
 }

@@ -8,6 +8,9 @@ class ErrorHandler:
 
     def runtime_error(self, error):
         print(f"[line {error.token.line}]: {error.message}")
+        with open('error_logs.txt', 'a') as file:
+            err_log = f"[line {error.token.line}] :  {error.message} \n"
+            file.write(err_log)
         self.hadRuntimeError = True
 
     def error(self, line, message):
@@ -15,6 +18,9 @@ class ErrorHandler:
 
     def report(self, line, where, message):
         print(f"[line {line}] Error{where}: {message}")
+        with open('error_logs.txt', 'a') as file:
+            err_log = f"[line {line}] Error{where}: {message} \n"
+            file.write(err_log)
         self.hadError = True
 
     def error_token(self, token, message):

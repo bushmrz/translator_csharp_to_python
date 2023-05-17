@@ -125,6 +125,20 @@ class Language:
             Language.runtime_error(e)
 
     @staticmethod
+    def check_syntax(sourse):
+        scanner = Scanner(sourse)
+        tokens = scanner.scan_tokens()
+        parser = Parser(tokens, Language.error_handler)
+        statements = parser.parse()
+
+        resolver = Resolver(Language.interpreter)
+        resolver.resolve(statements)
+
+        # Language.interpreter.interpret(statements)
+        # return PythonPrinter().return_text(statements)
+
+
+    @staticmethod
     def error(line, message):
         Language.report(line, "", message)
 

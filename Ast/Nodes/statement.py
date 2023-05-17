@@ -121,8 +121,12 @@ class Var(Stmt):
         self.type = type
         self.initializer = initializer
 
+    def __str__(self):
+        return self.name
+
     def accept(self, visitor: StmtVisitor[ReturnTypeStmt]) -> ReturnTypeStmt:
         return visitor.visit_var_stmt(self)
+
 
 
 class While(Stmt):
